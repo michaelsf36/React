@@ -5,10 +5,12 @@ import Footer from './components/footer/Footer'
 import Navbar from './components/navbar/Navbar'
 import Cadastro from './pages/cadastro/Cadastro'
 import Login from './pages/login/Login'
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
 	return (
 		<>
+		<AuthProvider>
 		<BrowserRouter>
 			<Navbar /> 
 			<Routes>
@@ -18,6 +20,7 @@ function App() {
 				</Routes>
 			<Footer />
 		</BrowserRouter>
+		</AuthProvider>
 		</>
 	);
 }
