@@ -5,6 +5,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import type Tema from "../../../models/Tema";
 import { buscar } from "../../../services/Service";
 import { SyncLoader } from "react-spinners";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaTemas() {
 
@@ -17,7 +18,7 @@ function ListaTemas() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Sua sessão expirou, faça o login novamente.");
+            ToastAlerta("Sua sessão expirou, faça o login novamente.", "erro");
             navigate("/");
 
         }
